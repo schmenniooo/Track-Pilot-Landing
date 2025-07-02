@@ -6,4 +6,5 @@ html, body {
     height: 100%;
     width: 100%;
     overflow: scroll;
+    background: linear-gradient(135deg, #1E1E1E 0%, #243447 100%);
 }
