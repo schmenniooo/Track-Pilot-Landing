@@ -9,7 +9,7 @@ function MainContainer() {
     }
 
     return (
-        <main children="mainContainer">
+        <main className="mainContainer">
             <section className="logoContainer">
                 <img src="/logo.png" className="logo" alt="logo"/>
             </section>
@@ -20,9 +20,12 @@ function MainContainer() {
                 <li>Personalize your own experience with custom dashboard</li>
             </ul>
             <form className="emailForm" onSubmit={handleSubmit}>
-                Enter your E-Mail to get notified when we launch!
-                <input className="emailField" type="text" placeholder="Your email"/>
-                <button className="submitButton" type="submit">Submit</button>
+                <h3 className="formHeading">Get notified when we launch!</h3>
+                <p className="formSubtext">Be the first to know when TrackPilot CRM is ready.</p>
+                <div className="inputContainer">
+                    <input className="emailField" type="email" placeholder="Your email address" required />
+                    <button className="submitButton" type="submit">Notify Me</button>
+                </div>
             </form>
         </main>
     )
