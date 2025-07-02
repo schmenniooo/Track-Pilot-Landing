@@ -9,9 +9,14 @@ function MainContainer() {
                 <img className="logo" alt="logo"/>
             </section>
             <h1>TrackPilot CRM</h1>
-            <p>Coming soon..</p>
+            <ul>
+                <li>Easy to use CRM system for self employed people or small companies</li>
+                <li>Track your clients, orders and finance</li>
+                <li>Personalize your own experience with custom dashboard</li>
+            </ul>
             <form>
-                <input type="text" placeholder="Your email"/>
+                Enter your E-Mail to get notified when we launch!
+                <input className="emailField" type="text" placeholder="Your email"/>
             </form>
         </main>
     )
