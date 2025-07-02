@@ -11,6 +11,7 @@
     backdrop-filter: blur(15px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 0 0 10px rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    width: calc(100% - 2rem); /* Ensures there's a gap on both sides */
 }
 
 .logoContainer {
@@ -176,6 +177,7 @@
 @media (max-width: 768px) {
     .mainContainer {
         padding: 1.5rem;
+        width: calc(100% - 1.5rem); /* Smaller gap on mobile for better space utilization */
     }
 
     .heading {
