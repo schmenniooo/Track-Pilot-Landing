@@ -10,18 +10,20 @@
 
 .logo {
 
+    width: 100px;
+    height: 100px;
 }
 
-.h1 {
+.heading {
 
 }
 
-.p {
+.featureList {
 
+    list-style: none;
 }
 
 .form {
-
 
 }
 
