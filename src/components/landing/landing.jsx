@@ -1,13 +1,29 @@
 
-import './mainContainer.css';
+import './landing.css';
 import emailjs from '@emailjs/browser';
-import { useRef } from 'react';
+import {useRef, useState} from 'react';
+import Notification from "../noteToast/notification.jsx";
 
-function MainContainer() {
+function Landing() {
 
     const form = useRef(null);
+    const [notificationToast, setNotificationToast] = useState(false);
+    const [notificationText, setNotificationText] = useState('');
+
+    const handleEmailToast = (noteText) => {
+
+        setNotificationToast(true);
+        setNotificationText(noteText)
+
+        onwaiting(() => {
+            setTimeout(() => {
+                setNotificationToast(false);
+            }, 3000);
+        })
+    }
 
     const handleSubmit = (e) => {
+
         e.preventDefault();
 
         emailjs.sendForm(
@@ -17,12 +33,12 @@ function MainContainer() {
             'nVmAr56Z9X6gZK7o5'
         )
             .then(() => {
-                alert("Thank you! You'll be notified.");
-                //form.current.reset();
+                handleEmailToast("You will here from us!");
+                form.current.reset();
             })
             .catch((error) => {
+                handleEmailToast("Oops something went wrong!");
                 console.error('EmailJS Error:', error);
-                alert("Something went wrong. Try again.");
             });
     };
 
@@ -45,8 +61,9 @@ function MainContainer() {
                     <button className="submitButton" type="submit">Notify Me</button>
                 </div>
             </form>
+            <Notification text={notificationText} onClose={notificationToast}/>
         </main>
     );
 }
 
-export default MainContainer;
+export default Landing;

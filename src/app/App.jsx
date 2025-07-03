@@ -1,13 +1,13 @@
 
 import './App.css'
-import MainContainer from "../components/mainContainer.jsx";
+import Landing from "../components/landing/landing.jsx";
 
 function App() {
 
   return (
 
       <div className="appContainer">
-            <MainContainer/>
+            <Landing/>
       </div>
   )
 }
